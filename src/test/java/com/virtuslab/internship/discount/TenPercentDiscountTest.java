@@ -19,12 +19,14 @@ class TenPercentDiscountTest {
         var productDb = new ProductDb();
         var cheese = productDb.getProduct("Cheese");
         var steak = productDb.getProduct("Steak");
+
         List<ReceiptEntry> receiptEntries = new ArrayList<>();
         receiptEntries.add(new ReceiptEntry(cheese, 1));
         receiptEntries.add(new ReceiptEntry(steak, 1));
 
         var receipt = new Receipt(receiptEntries);
         var discount = new TenPercentDiscount();
+
         var expectedTotalPrice = cheese.price().add(steak.price()).multiply(BigDecimal.valueOf(0.9));
 
         // When
@@ -53,5 +55,32 @@ class TenPercentDiscountTest {
         // Then
         assertEquals(expectedTotalPrice, receiptAfterDiscount.totalPrice());
         assertEquals(0, receiptAfterDiscount.discounts().size());
+    }
+
+
+    // added ShouldNotApply10PercentDiscountWhenIsAlreadyApplied test
+    @Test
+    void ShouldNotApply10PercentDiscountWhenIsAlreadyApplied() {
+        // Given
+        var productDb = new ProductDb();
+        var cheese = productDb.getProduct("Cheese");
+        var steak = productDb.getProduct("Steak");
+
+        List<ReceiptEntry> receiptEntries = new ArrayList<>();
+        receiptEntries.add(new ReceiptEntry(cheese, 1));
+        receiptEntries.add(new ReceiptEntry(steak, 1));
+
+        var receipt = new Receipt(receiptEntries);
+        var discount = new TenPercentDiscount();
+
+        var expectedTotalPrice = cheese.price().add(steak.price()).multiply(BigDecimal.valueOf(0.9));
+
+        // When
+        var receiptAfterDiscount = discount.apply(receipt);
+        var receiptAfterSecondDiscount = discount.apply(receiptAfterDiscount);
+
+        // Then
+        assertEquals(expectedTotalPrice, receiptAfterSecondDiscount.totalPrice());
+        assertEquals(1, receiptAfterSecondDiscount.discounts().size());
     }
 }
