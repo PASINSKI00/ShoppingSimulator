@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductService {
 
-    private ProductDb productDb;
+    private final ProductDb productDb;
 
     public ProductService(ProductDb productDb) {
         this.productDb = productDb;

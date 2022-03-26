@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class BasketService {
 
-    private BasketRepository basketRepository;
+    private final BasketRepository basketRepository;
 
     public BasketService(BasketRepository basketRepository) {
         this.basketRepository = basketRepository;
