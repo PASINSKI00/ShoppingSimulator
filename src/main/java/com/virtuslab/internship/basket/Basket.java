@@ -17,6 +17,10 @@ public class Basket {
         products.add(product);
     }
 
+    public boolean removeProduct(Product product) {
+        return products.remove(product);
+    }
+
     public List<Product> getProducts() {
         return products;
     }
