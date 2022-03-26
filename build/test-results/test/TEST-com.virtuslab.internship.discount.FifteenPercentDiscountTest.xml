@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.virtuslab.internship.discount.FifteenPercentDiscountTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-26T16:09:11" hostname="LAPTOP-M9EHKSNA" time="0.039">
+<testsuite name="com.virtuslab.internship.discount.FifteenPercentDiscountTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-26T16:13:39" hostname="LAPTOP-M9EHKSNA" time="0.126">
   <properties/>
-  <testcase name="shouldNotApply15PercentDiscountWhenIsAlreadyApplied()" classname="com.virtuslab.internship.discount.FifteenPercentDiscountTest" time="0.036"/>
-  <testcase name="shouldApply15PercentDiscountWhenBasketContainsAtLeast3Grains()" classname="com.virtuslab.internship.discount.FifteenPercentDiscountTest" time="0.002"/>
-  <testcase name="shouldNotApply15PercentDiscountWhenBasketDoesntContainAtLeast3Grains()" classname="com.virtuslab.internship.discount.FifteenPercentDiscountTest" time="0.0"/>
+  <testcase name="shouldNotApply15PercentDiscountWhenIsAlreadyApplied()" classname="com.virtuslab.internship.discount.FifteenPercentDiscountTest" time="0.116"/>
+  <testcase name="shouldApply15PercentDiscountWhenBasketContainsAtLeast3Grains()" classname="com.virtuslab.internship.discount.FifteenPercentDiscountTest" time="0.004"/>
+  <testcase name="shouldNotApply15PercentDiscountWhenBasketDoesntContainAtLeast3Grains()" classname="com.virtuslab.internship.discount.FifteenPercentDiscountTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
