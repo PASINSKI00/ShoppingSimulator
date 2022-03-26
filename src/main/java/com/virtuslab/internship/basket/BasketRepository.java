@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public class BasketRepository {
 
-    private Basket basket;
+    private final Basket basket;
 
     public BasketRepository() {
         this.basket = new Basket();
@@ -24,5 +24,9 @@ public class BasketRepository {
 
     public boolean removeProduct(Product product) {
         return this.basket.removeProduct(product);
+    }
+
+    public Basket getBasket(){
+        return this.basket;
     }
 }

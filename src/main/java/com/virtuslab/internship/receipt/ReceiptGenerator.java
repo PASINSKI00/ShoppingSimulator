@@ -2,12 +2,14 @@ package com.virtuslab.internship.receipt;
 
 import com.virtuslab.internship.basket.Basket;
 import com.virtuslab.internship.product.Product;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class ReceiptGenerator {
 
     public Receipt generate(Basket basket) {
